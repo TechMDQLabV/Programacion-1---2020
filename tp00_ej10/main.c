@@ -27,7 +27,7 @@ int main()
         }
         else
         {
-            if((nro3 > nro1) && (nro3 > nro2))
+            if((nro3 > nro1))
             {
                 mayor = nro3;
             }

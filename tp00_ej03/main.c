@@ -1,5 +1,5 @@
 /**
-3)Un maestro desea saber que porcentaje de hombres y que porcentaje de mujeres hay en ungrupo de estudiantes.
+3)Un maestro desea saber que porcentaje de hombres y que porcentaje de mujeres hay en un grupo de estudiantes.
 */
 
 #include <stdio.h>
@@ -20,6 +20,7 @@ int main()
     /// Proceso. Realizo los calculos necesarios
     totalAlumnos = cantHombres + cantMujeres;
     porcentajeHombres = (float) cantHombres * 100 / totalAlumnos;
+    ///porcentajeMujeres = (float) cantMujeres * 100 / totalAlumnos;
     porcentajeMujeres = 100 - porcentajeHombres; /// es mas simple el calculo
 
     /// Muestro los datos

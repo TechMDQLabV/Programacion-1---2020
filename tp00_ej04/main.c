@@ -7,7 +7,7 @@ de tres calificaciones es mayor o igual a 7; reprueba en caso contrario.
 #include <stdio.h>
 #include <stdlib.h>
 
-const int limiteAprobado = 7;   /// Declaro una constante para usar como limite de aprobacion
+const int LIMITE_APROBADO = 7;   /// Declaro una constante para usar como limite de aprobacion
 
 
 int main()
@@ -33,7 +33,7 @@ int main()
 
 
     /// Muestro los datos de acuerdo al contenido de la variable promedio
-    if (promedio >=7)
+    if (promedio >=LIMITE_APROBADO)
     {
           printf("El almuno aprobo la materia con un promedio de %i",promedio);
     }

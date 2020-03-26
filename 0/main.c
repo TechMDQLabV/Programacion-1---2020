@@ -3,24 +3,27 @@
 
 int main()
 {
-    int Hombres=0;
-    int Mujeres=0;
-    int Total=0;
-    int PorcH=0;
-    int PorcM=0;
+    int n1, n2, total;
 
-    printf("Introduzca la cantidad de hombres: ");
-    scanf("%d", &Hombres);
-    printf("Introduzca la cantidad de mujeres: ");
-    scanf("%d", &Mujeres);
+    printf("Introduzca un nro: ");
+    scanf("%d", &n1);
+    printf("Introduzca otro nro: ");
+    scanf("%d", &n2);
 
-    Total=Hombres+Mujeres;
-    PorcH=(Hombres*100)/Total;
-    PorcM=(Mujeres*100)/Total;
+    if(n1==n2)
+    {
+        total = n1 * n2;
+    }
+    else if(n1>n2)
+    {
+        total = n1-n2;
+    }
+    else
+    {
+        total = n1+n2;
+    }
 
-    printf("El porcentaje total de Hombres es: %d", PorcH);
-    printf("El porcentaje total de Mujeres es: %d", PorcM);
+    printf("\n Total: %d", total);
 
-    printf("Hello world!\n");
     return 0;
 }

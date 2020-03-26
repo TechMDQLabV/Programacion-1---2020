@@ -15,7 +15,7 @@ const float DESCUENTO_MAYOR = 0.2;
 int main()
 {
     /// declaro e inicializo variables
-    int cantCamisas = 0, importeCamisa = 0, importeTotal;
+    int cantCamisas = 0, importeCamisa = 0, importeTotal = 0;
     float descuento = 0, aPagar = 0;
 
     /// Interactuo con el usuario
