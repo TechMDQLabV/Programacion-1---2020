@@ -12,7 +12,6 @@
 
 int main()
 {
-    srand(time(NULL));
     Pila a, b, auxA, auxB;
     inicpila(&a);
     inicpila(&b);
@@ -21,45 +20,58 @@ int main()
 
     char opcion;
 
-    for(int i=0;i<40;i++){
+    /// Cargo la pila a
+    for(int i=0;i<20;i++){
         apilar(&a, rand()%10);
     }
 
     do{
-        printf("\n\n Cargando pila A ....... \n");
+        printf("\n Carga de pila A \n")
         leer(&a);
 
         printf("\n\n ESC para salir ....... ");
         opcion=getch();
     }while(opcion!=ESC);
 
-    for(int i=0;i<40;i++){
+    /// Cargo la pila b
+    for(int i=0;i<20;i++){
         apilar(&b, rand()%10);
     }
 
     do{
-        printf("\n\n Cargando pila B ....... \n");
+        printf("\n Carga de pila B \n")
         leer(&b);
 
         printf("\n\n ESC para salir ....... ");
         opcion=getch();
     }while(opcion!=ESC);
 
-    while((!pilavacia(&a))&&(!pilavacia(&b))){  /// le saco un elemento a cada pila en el mismo ciclo
+
+    /// Muestro el contenido de las pilas
+    printf("\n\n Pila A ....... ");
+    mostrar(&a);
+
+    printf("\n\n Pila B ....... ");
+    mostrar(&b);
+
+    /// Recorro las dos pilas juntas mientras no estén vacías
+    while((!pilavacia(&a))&&(!pilavacia(&b))){
         apilar(&auxA, desapilar(&a));
         apilar(&auxB, desapilar(&b));
     }
 
-    if((pilavacia(&a))&&(pilavacia(&b))){    /// si las pilas se vaciaron es que tenían la misma cantidad de elementos
-        printf("\n\n Las Pilas tienen la misma cantidad de elementos");
+    /// Si se vaciaron al mismo tiempo es que tienen la misma cantidad de elementos
+    if((pilavacia(&a))&&(pilavacia(&b))){
+        printf("\n\n Las dos pilas tienen la misma cantidad de elementos");
     }
-    else if(!pilavacia(&a)){  /// sino, si la pila A no se vació es que tiene más elemntos que la pila B
-        printf("\n\n La Pila A tiene mas elementos que la pila B");
+    else if(pilavacia(&a)){
+        printf("\n\n La pila B tiene mas elementos que la pila A");
     }
-    else{  /// y sino la pila B es la que tiene más elementos
-        printf("\n\n La Pila B tiene mas elementos que la pila A");
+    else{
+        printf("\n\n La pila A tiene mas elementos que la pila B");
     }
-    /// Vuelvo las pilas al estado original
+
+    /// vuelvo a poner los datos en sus pilas originales
     while(!pilavacia(&auxA)){
         apilar(&a, desapilar(&auxA));
     }
